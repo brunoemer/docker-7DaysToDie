@@ -1,8 +1,8 @@
 FROM joshuacox/steamer
-MAINTAINER Josh Cox <josh 'at' webhosting coop>
+MAINTAINER James S. Moore <james 'at' webtechhq com>
 
 USER root
-ENV 7DTDocker 20150513
+ENV 7DTDocker 20150611
 
 # override these variables in your Dockerfile
 ENV STEAM_USERNAME anonymous
