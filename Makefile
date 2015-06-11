@@ -11,7 +11,7 @@ build: builddocker beep
 run: steam_username steam_password steam_guard_code builddocker rundocker beep
 
 rundocker:
-	@docker run --name=docker-7DaysToDiei \
+	@docker run --name=7daystodie \
 	--cidfile="cid" \
 	-v /tmp:/tmp \
 	--env STEAM_USERNAME=`cat steam_username` \
@@ -19,10 +19,10 @@ rundocker:
 	--env STEAM_GUARD_CODE=`cat steam_guard_code` \
 	-v /var/run/docker.sock:/run/docker.sock \
 	-v $(shell which docker):/bin/docker \
-	-t Thalhalla/docker-7DaysToDiei
+	-t thalhalla/7daystodie
 
 builddocker:
-	/usr/bin/time -v docker build -t Thalhalla/docker-7DaysToDiei .
+	/usr/bin/time -v docker build -t thalhalla/7daystodie .
 
 beep:
 	@echo "beep"
