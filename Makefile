@@ -8,7 +8,7 @@ help:
 
 build: builddocker beep
 
-run: steam_username steam_password steam_guard_code builddocker rundocker beep
+run: steam_username steam_password builddocker rundocker beep
 
 rundocker:
 	@docker run --name=7daystodie \
