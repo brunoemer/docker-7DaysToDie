@@ -2,7 +2,15 @@ FROM joshuacox/steamer
 MAINTAINER Josh Cox <josh 'at' webhosting coop>
 
 USER root
-ENV 7DTDocker 2015080401
+ENV 7DTDocker 2015080403
+
+# expose 7DaysToDie ports
+EXPOSE 25000
+EXPOSE 25001
+EXPOSE 25002
+EXPOSE 25003
+EXPOSE 25004
+EXPOSE 25005
 
 # override these variables in your Dockerfile
 ENV STEAM_USERNAME anonymous

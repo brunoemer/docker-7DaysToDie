@@ -14,6 +14,10 @@ rundocker:
 	@docker run --name=7daystodie \
 	--cidfile="cid" \
 	-v /tmp:/tmp \
+	-p 25001:25001/udp \
+	-p 25002:25002/udp \
+	-p 25003:25003/udp \
+	-p 25000:25000/tcp \
 	--env STEAM_USERNAME=`cat steam_username` \
 	--env STEAM_PASSWORD=`cat steam_password` \
 	--env STEAM_GUARD_CODE=`cat steam_guard_code` \
