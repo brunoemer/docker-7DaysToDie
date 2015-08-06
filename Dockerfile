@@ -26,10 +26,15 @@ ADD ./start.sh /start.sh
 RUN chmod 755 /start.sh
 RUN gpasswd -a steam tty
 
+# setup steam user / default configs
 USER steam
 RUN echo 'new-session' >> ~/.tmux.conf
 WORKDIR /home/steam
 RUN wget http://gameservermanagers.com/dl/sdtdserver
 RUN chmod +x sdtdserver
+
+# import custom 7DTD config
+ADD ./serverconfig_template.xml /home/steam/serverfiles/sdtd-server.xml
+RUN chmod 644 /home/steam/serverfiles/sdtd-server.xml
 
 ENTRYPOINT ["/start.sh"]
