@@ -35,6 +35,5 @@ RUN chmod +x sdtdserver
 
 # import custom 7DTD config
 ADD ./serverconfig_template.xml /home/steam/serverfiles/sdtd-server.xml
-RUN chmod 644 /home/steam/serverfiles/sdtd-server.xml
 
 ENTRYPOINT ["/start.sh"]
