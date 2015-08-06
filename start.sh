@@ -8,4 +8,5 @@ sed -i "s/steamuser=REPLACE_USER/steamuser='$STEAM_USERNAME'/" sdtdserver
 sed -i "s/steampass=REPLACE_PASSWORD/steampass='$STEAM_PASSWORD'/" sdtdserver
 set_steam_guard_code $STEAM_GUARD_CODE
 yes y|./sdtdserver install
+cp -v ./serverconfig_template.xml ./serverfiles/sdtd-server.xml
 bash /run.sh

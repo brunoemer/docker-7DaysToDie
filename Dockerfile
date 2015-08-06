@@ -20,7 +20,7 @@ USER root
 RUN echo 'new-session' >> ~/.tmux.conf
 
 # import custom 7DTD config
-ADD ./serverconfig_template.xml /home/steam/serverfiles/sdtd-server.xml
+ADD ./serverconfig_template.xml /home/steam/serverconfig.xml
 ADD ./run.sh /run.sh
 RUN chmod 755 /run.sh
 
