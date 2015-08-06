@@ -18,6 +18,9 @@ ENV STEAM_GUARD_CODE ' '
 # and override this file with the command to start your server
 USER root
 RUN echo 'new-session' >> ~/.tmux.conf
+
+# import custom 7DTD config
+ADD ./serverconfig.xml /home/steam/serverfiles/sdtd-server.xml
 ADD ./run.sh /run.sh
 RUN chmod 755 /run.sh
 
@@ -32,8 +35,5 @@ RUN echo 'new-session' >> ~/.tmux.conf
 WORKDIR /home/steam
 RUN wget http://gameservermanagers.com/dl/sdtdserver
 RUN chmod +x sdtdserver
-
-# import custom 7DTD config
-ADD ./serverconfig_template.xml /home/steam/serverfiles/sdtd-server.xml
 
 ENTRYPOINT ["/start.sh"]
