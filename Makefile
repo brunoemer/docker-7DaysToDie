@@ -8,12 +8,15 @@ help:
 
 build: builddocker beep
 
-run: steam_username steam_password steam_guard_code builddocker rundocker beep
+run: steam_username steam_password builddocker rundocker beep
 
 rundocker:
 	@docker run --name=7daystodie \
 	--cidfile="cid" \
-	-v /tmp:/tmp \
+	-p 26900:26900/udp \
+	-p 26901:26901/udp \
+	-p 9080:8080/tcp \
+	-p 9081:8081/tcp \
 	--env STEAM_USERNAME=`cat steam_username` \
 	--env STEAM_PASSWORD=`cat steam_password` \
 	--env STEAM_GUARD_CODE=`cat steam_guard_code` \
