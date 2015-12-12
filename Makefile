@@ -58,16 +58,16 @@ enter:
 
 steam_username:
 	@while [ -z "$$STEAM_USERNAME" ]; do \
-		read -r -p "Enter the steam username you wish to associate with this DockArmaIII container [STEAM_USERNAME]: " STEAM_USERNAME; echo "$$STEAM_USERNAME">>steam_username; cat steam_username; \
+		read -r -p "Enter the steam username you wish to associate with this container [STEAM_USERNAME]: " STEAM_USERNAME; echo "$$STEAM_USERNAME">>steam_username; cat steam_username; \
 	done ;
 
 steam_guard_code:
 	@while [ -z "$$STEAM_GUARD_CODE" ]; do \
-		read -r -p "Enter the steam guard code you wish to associate with this DockArmaIII container [STEAM_GUARD_CODE]: " STEAM_GUARD_CODE; echo "$$STEAM_GUARD_CODE">>steam_guard_code; cat steam_guard_code; \
+		read -r -p "Enter the steam guard code you wish to associate with this container [STEAM_GUARD_CODE]: " STEAM_GUARD_CODE; echo "$$STEAM_GUARD_CODE">>steam_guard_code; cat steam_guard_code; \
 	done ;
 
 steam_password:
 	@while [ -z "$$STEAM_PASSWORD" ]; do \
-		read -r -p "Enter the steam password you wish to associate with this DockArmaIII container [STEAM_PASSWORD]: " STEAM_PASSWORD; echo "$$STEAM_PASSWORD">>steam_password; cat steam_password; \
+		read -r -p "Enter the steam password you wish to associate with this container [STEAM_PASSWORD]: " STEAM_PASSWORD; echo "$$STEAM_PASSWORD">>steam_password; cat steam_password; \
 	done ;
 

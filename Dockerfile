@@ -22,6 +22,9 @@ ENV STEAM_GUARD_CODE ' '
 # and override this file with the command to start your server
 USER root
 RUN echo 'new-session' >> ~/.tmux.conf
+
+# import custom 7DTD config
+ADD ./serverconfig_template.xml /home/steam/serverconfig_template.xml
 ADD ./run.sh /run.sh
 RUN chmod 755 /run.sh
 
@@ -30,6 +33,7 @@ ADD ./start.sh /start.sh
 RUN chmod 755 /start.sh
 RUN gpasswd -a steam tty
 
+# setup steam user / default configs
 USER steam
 RUN echo 'new-session' >> ~/.tmux.conf
 WORKDIR /home/steam
