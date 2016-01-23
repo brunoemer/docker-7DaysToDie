@@ -2,22 +2,25 @@ FROM joshuacox/steamer
 MAINTAINER James S. Moore <james 'at' webtechhq com>
 
 USER root
-<<<<<<< HEAD
-ENV 7DTDocker 20150611
-=======
 ENV 7DTDocker 2015080403
 
 # expose 7DaysToDie ports
 EXPOSE 26900
 EXPOSE 26901
-EXPOSE 9080
-EXPOSE 9081
->>>>>>> 6b354e32aa9c4523cad09a9bf224ca7681c327a3
+EXPOSE 8080
+EXPOSE 8081
 
 # override these variables in your Dockerfile
 ENV STEAM_USERNAME anonymous
 ENV STEAM_PASSWORD ' '
 ENV STEAM_GUARD_CODE ' '
+
+#add curl (needed for sdtdserver)
+RUN echo 'deb http://http.debian.net/debian/ jessie main contrib non-free'>>/etc/apt/sources.list
+RUN dpkg --add-architecture i386
+RUN apt-get -y update
+RUN apt-get install -y curl
+RUN rm -rf /var/lib/apt/lists/*
 
 # and override this file with the command to start your server
 USER root
@@ -32,6 +35,7 @@ RUN chmod 755 /run.sh
 ADD ./start.sh /start.sh
 RUN chmod 755 /start.sh
 RUN gpasswd -a steam tty
+RUN chown -R steam:steam /home/steam 
 
 # setup steam user / default configs
 USER steam

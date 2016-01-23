@@ -15,8 +15,8 @@ rundocker:
 	--cidfile="cid" \
 	-p 26900:26900/udp \
 	-p 26901:26901/udp \
-	-p 9080:8080/tcp \
-	-p 9081:8081/tcp \
+	-p 8080:8080/tcp \
+	-p 8081:8081/tcp \
 	--env STEAM_USERNAME=`cat steam_username` \
 	--env STEAM_PASSWORD=`cat steam_password` \
 	--env STEAM_GUARD_CODE=`cat steam_guard_code` \
