@@ -22,7 +22,7 @@ docker build  -t krusmir/docker7daystodie-server .
  krusmir/docker7daystodie-server
  ```
  
- Remember to change _**YOUR_STEAM_USERNAME**_ and _**YOUR_STEAM_PASSWORD**_ with your steam username and password.  
+Remember to change _**YOUR_STEAM_USERNAME**_ and _**YOUR_STEAM_PASSWORD**_ with your steam username and password.  
  
 To avoid **Steam Guard Code** problems, disable it on your steam account.  Since this might pose a security problem for your steam account, it's recommended to create a new steam account dedicated for the server and protect it with a strong password.  Or not, depends how paranoid you are. 
 
