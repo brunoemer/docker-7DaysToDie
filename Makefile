@@ -13,13 +13,14 @@ run: steam_username steam_password builddocker rundocker beep
 rundocker:
 	@docker run --name=7daystodie \
 	--cidfile="cid" \
+	-p 26900:26900/tcp \
 	-p 26900:26900/udp \
 	-p 26901:26901/udp \
+	-p 26902:26902/udp \
 	-p 8080:8080/tcp \
 	-p 8081:8081/tcp \
-	--env STEAM_USERNAME=`cat steam_username` \
-	--env STEAM_PASSWORD=`cat steam_password` \
-	--env STEAM_GUARD_CODE=`cat steam_guard_code` \
+	--env GameName=NuvolaHost \
+	--env ServerName="NuvolaHost 7 Days To Die Host" \
 	-v /var/run/docker.sock:/run/docker.sock \
 	-v $(shell which docker):/bin/docker \
 	-t thalhalla/7daystodie

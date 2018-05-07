@@ -12,14 +12,19 @@ EXPOSE 8081
 
 # override these variables in your Dockerfile
 ENV STEAM_USERNAME anonymous
-ENV STEAM_PASSWORD ' '
+ENV STEAM_PASSWORD ''
 ENV STEAM_GUARD_CODE ' '
 
-#add curl (needed for sdtdserver)
+#packages
+RUN apt-get -y update
+RUN apt-get install -y file bsdmainutils python bzip2 unzip bc tmux telnet expect
+RUN apt-get install -y curl
+RUN apt-get install -y less nano
+
 RUN echo 'deb http://http.debian.net/debian/ jessie main contrib non-free'>>/etc/apt/sources.list
 RUN dpkg --add-architecture i386
 RUN apt-get -y update
-RUN apt-get install -y curl
+RUN apt-get install -y libstdc++6:i386
 RUN rm -rf /var/lib/apt/lists/*
 
 # and override this file with the command to start your server

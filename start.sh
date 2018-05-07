@@ -2,7 +2,8 @@
 
 cd /home/steam
 sed -i 's/steamuser="username"/steamuser=REPLACE_USER/' sdtdserver
-sed -i 's/steampass="password"/steampass=REPLACE_PASSWORD/' sdtdserver
+#sed -i 's/steampass="password"/steampass=REPLACE_PASSWORD/' sdtdserver
+sed -i "s/steampass='password'/steampass=REPLACE_PASSWORD/" sdtdserver
 sed -i "s/steamuser=REPLACE_USER/steamuser='$STEAM_USERNAME'/" sdtdserver
 sed -i "s/steampass=REPLACE_PASSWORD/steampass='$STEAM_PASSWORD'/" sdtdserver
 yes y|./sdtdserver install
