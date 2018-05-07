@@ -15,6 +15,10 @@ ENV STEAM_USERNAME anonymous
 ENV STEAM_PASSWORD ''
 ENV STEAM_GUARD_CODE ' '
 
+#timezone
+RUN echo "America/Sao_Paulo" | sudo tee /etc/timezone
+RUN sudo dpkg-reconfigure --frontend noninteractive tzdata
+
 #packages
 RUN apt-get -y update
 RUN apt-get install -y file bsdmainutils python bzip2 unzip bc tmux telnet expect
